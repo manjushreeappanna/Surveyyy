@@ -1,0 +1,20 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Analytics</title>
+</head>
+<body>
+    <h2>Expense Analytics</h2>
+    <img src="{{ graph }}" alt="Expense Chart">
+</body>
+</html> {% endcomment %}
+
+{% extends 'survey_app/base.html' %}
+
+{% block title %}Expense Analytics{% endblock %}
+
+{% block content %}
+<h2>Expense Analytics</h2>
+<img src="{{ graph }}" alt="Expense Chart">
+<a href="{% url 'user_home' %}" class="btn">Back to Dashboard</a>
+{% endblock %}

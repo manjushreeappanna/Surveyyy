@@ -1,0 +1,9 @@
+{% extends 'survey_app/base.html' %}
+
+{% block title %}Survey Approved{% endblock %}
+
+{% block content %}
+<h2>Survey Approved</h2>
+<p>The user's survey has been approved, and login details have been emailed.</p>
+<a href="{% url 'admin:index' %}" class="btn">Back to Admin</a>
+{% endblock %}

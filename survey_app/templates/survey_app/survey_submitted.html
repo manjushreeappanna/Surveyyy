@@ -1,0 +1,9 @@
+{% extends 'survey_app/base.html' %}
+
+{% block title %}Survey Submitted{% endblock %}
+
+{% block content %}
+<h2>Thank You!</h2>
+<p>Your survey has been submitted successfully.</p>
+<a href="{% url 'user_home' %}" class="btn">Go to Homepage</a>
+{% endblock %}

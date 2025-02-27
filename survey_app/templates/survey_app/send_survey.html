@@ -1,0 +1,12 @@
+{% extends 'survey_app/base.html' %}
+
+{% block title %}Send Survey{% endblock %}
+
+{% block content %}
+<h2>Send Survey Link</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Send Link</button>
+</form>
+{% endblock %}

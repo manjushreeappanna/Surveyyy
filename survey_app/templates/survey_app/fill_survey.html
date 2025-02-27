@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Fill Survey</title>
+</head>
+<body>
+    <h2>Expense Survey</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Survey</button>
+    </form>
+</body>
+</html> -->
+
+{% comment %} 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Survey</title>
+</head>
+<body>
+    <h1>Expense Survey</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="tea">Tea:</label>
+        <input type="number" name="tea" value="{{ survey.tea|default:0 }}"><br><br>
+        
+        <label for="coffee">Coffee:</label>
+        <input type="number" name="coffee" value="{{ survey.coffee|default:0 }}"><br><br>
+        
+        <label for="biscuit">Biscuit:</label>
+        <input type="number" name="biscuit" value="{{ survey.biscuit|default:0 }}"><br><br>
+        
+        <label for="smoking">Smoking:</label>
+        <input type="number" name="smoking" value="{{ survey.smoking|default:0 }}"><br><br>
+
+        <button type="submit">Submit Survey</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+
+
+{% extends 'survey_app/base.html' %}
+
+{% block title %}Fill Survey{% endblock %}
+
+{% block content %}
+<h2>Fill Out Your Survey</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Tea per day:</label>
+    <input type="number" name="tea" value="{{ survey.tea }}" required><br><br>
+
+    <label>Coffee per day:</label>
+    <input type="number" name="coffee" value="{{ survey.coffee }}" required><br><br>
+
+    <label>Biscuit packets per day:</label>
+    <input type="number" name="biscuit" value="{{ survey.biscuit }}" required><br><br>
+
+    <label>Smoking per day:</label>
+    <input type="number" name="smoking" value="{{ survey.smoking }}" required><br><br>
+
+    <button type="submit" class="btn">Submit Survey</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Survey App{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        .btn { padding: 10px 20px; background: blue; color: white; text-decoration: none; border-radius: 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey App</h1>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

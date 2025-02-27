@@ -1,0 +1,43 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Your Expense Summary</title>
+</head>
+<body>
+    <h2>Welcome, {{ user.username }}</h2>
+    <h3>Your Expenses:</h3>
+    <p>Tea: {{ survey.tea_expense }}</p>
+    <p>Coffee: {{ survey.coffee_expense }}</p>
+    <p>Biscuit: {{ survey.biscuit_expense }}</p>
+    <p>Smoking: {{ survey.smoking_expense }}</p>
+
+    <h3>Analytics:</h3>
+    <p>Daily Expense: {{ daily_expense }}</p>
+    <p>Weekly Expense: {{ weekly_expense }}</p>
+    <p>Monthly Expense: {{ monthly_expense }}</p>
+</body>
+</html> {% endcomment %}
+
+
+{% extends 'survey_app/base.html' %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<h2>Welcome, {{ user.username }}!</h2>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% else %}
+    <h3>Your Monthly Expenses:</h3>
+    <p>Tea: {{ tea }}</p>
+    <p>Coffee: {{ coffee }}</p>
+    <p>Biscuit: {{ biscuit }}</p>
+    <p>Smoking: {{ smoking }}</p>
+
+    <h3>Expense Breakdown:</h3>
+    <p>Daily Expenses: ₹{{ daily_expenses }}</p>
+    <p>Weekly Expenses: ₹{{ weekly_expenses }}</p>
+    <p>Monthly Expenses: ₹{{ monthly_expenses }}</p>
+{% endif %}
+{% endblock %}
